@@ -1,0 +1,94 @@
+<html>
+    <link rel="stylesheet" href="style.css">
+<body>
+<?php 
+echo"<br><hr><br><b>Array store Multiple values in single variable , Used Indexed array and Count funtion :</b><br>";
+    $cars = array("Volvo","BMW","Toyota");
+    echo "Love is" ." ". $cars[0] ." ". $cars[1] ." ". $cars[2] ." ". count($cars);
+    echo"<br><br><br><hr><br>";
+
+
+//Loop in indexed array
+echo"<br><b>Loop in indexed array :</b><br>";
+    $arraylength = count($cars);
+
+    for ($x=0; $x < $arraylength; $x++) { 
+        echo $cars[$x];
+        echo "<br>";
+    }
+    echo "<br><hr><br>";
+
+
+//Associative Array
+echo "<br><b>Associative array Use Named keys user assign : </b><br>";
+    $age = array("Taher"=>"20", "Daman"=>"22", "Yash"=>"21");
+    echo "Taher is " . $age['Taher'] . " Years old.";
+    echo "<br><br><hr><br>";
+
+//Loop through In Associative Array
+echo "<br><b>Loop through In Associative Array</b><br>";
+
+    foreach ($age as $x => $value) {
+        echo "Name = " . $x . "  & Age = ". $value;
+        echo "<br>";
+    }
+    echo "<br><hr><br>";
+
+
+//Multidimensional array An array Containing one or more arrays
+echo "<br><b>Multidimensional Array<br></b>";
+    $car = array(
+        array("Volvo ",22,18),
+        array("BMW ",21,14),
+        array("Toyota",25,11)
+    );
+    echo $car[0][0].": In Stocks " . $car[0][1] . " Sold " . $car[0][2] . "<br>";
+    echo $car[1][0].": In Stocks " . $car[1][1] . " Sold " . $car[1][2] . "<br>";
+    echo $car[2][0].": In Stocks " . $car[2][1] . " Sold " . $car[2][2] ;
+    echo "<br><br><hr><br>";
+
+
+//Multidimensional array in loop
+
+echo "<br><b>Multidimensional array in loop :</b><br>";
+    for ($row=0; $row < count($car); $row++) { 
+        echo "<b>Row Number : $row</b>";
+        echo "<ul>";
+        for ($col=0; $col < count($car); $col++) { 
+            echo "<li>" . $car[$row][$col] . "</li>";
+        
+        }
+        echo"</ul>";
+    }
+    echo "<br><br><hr><br>";
+
+
+//Array Sorting
+echo"Array sorting:";
+echo"<ul><li>sort() - sort arrays in ascending order
+<li>rsort() - sort arrays in descending order
+<li>asort() - sort associative arrays in ascending order, according to the value
+<li>ksort() - sort associative arrays in ascending order, according to the key
+<li>arsort() - sort associative arrays in descending order, according to the value
+<li>krsort() - sort associative arrays in descending order, according to the key</ul>";
+    echo "<br><B>Ascending order :</b><br>";
+    sort($cars);
+    
+    
+    $clength = count($cars);
+    for ($x=0; $x < $clength; $x++) { 
+    echo $cars[$x];
+    echo "<br>";
+    }
+
+echo "<br><b>Sort Array (Ascending Order), According to Value - asort()//Arraysort :</b><br>";
+    asort($age);
+
+    foreach ($age as $y => $value_y) {
+        echo " Name " . $y . " Age " . $value_y;
+        echo "<br>";
+    }
+    
+?>
+</body>
+</html>
